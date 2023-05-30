@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from './node_modules/mongoose';
 const WebSocket = require('ws');
 const mqtt = require('mqtt');
 
