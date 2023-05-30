@@ -1,10 +1,16 @@
 const mongoose = require('mongoose');
 const WebSocket = require('ws');
 const mqtt = require('mqtt');
+const socketIO = require('socket.io');
+const express = require('express');
+const http = require('http');
 
+const app = express();
+const server = http.createServer(app);
+const wss = socketIO(server);
 
 const dbUrl = 'mongodb+srv://cgomez33:jPwtjOdeGJE5vLMl@cluster0.uooqksx.mongodb.net/Lucecitas';
-const wss = new WebSocket.Server({port:8080});        
+//const wss = new WebSocket.Server({port:8080});        
         
 
 mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
